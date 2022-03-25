@@ -93,6 +93,8 @@ Get-NetFirewallRule -Name FPS-ICMP6-ERQ-In | Set-NetFirewallRule -enabled true
 # OnDomain
 Get-NetFirewallRule -name  FPS-ICMP4-ERQ-In-NoScope | Set-NetFirewallRule -enable true
 Get-NetFirewallRule -name  FPS-ICMP6-ERQ-In-NoScope | Set-NetFirewallRule -enable true
+
+Get-NetFirewallRule | ? Name -match "FPS-ICMP.-ERQ-In" | Set-NetFirewallRule -Enabled True
 ```
 
 ### with batch
