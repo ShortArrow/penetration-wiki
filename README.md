@@ -87,6 +87,12 @@ https://docs.microsoft.com/ja-jp/windows/security/threat-protection/windows-fire
 Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 New-NetFirewallRule -Name <名前> -DisplayName <表示名> -Enabled true -Profile <有効にするプロファイル> -Action Allow -LocalAddress Any -RemoteAddress Any -Protocol TCP -LocalPort 10050 -RemotePort Any
 New-NetFirewallRule -name 'DPF' -displayname 'DPF' -enable true -profile any -action allow -LocalAddress Any -RemoteAddress Any -Protocol TCP -LocalPort 1080 -RemotePort Any
+# OnWorkgroup
+Get-NetFirewallRule -Name FPS-ICMP4-ERQ-In | Set-NetFirewallRule -enabled true
+Get-NetFirewallRule -Name FPS-ICMP6-ERQ-In | Set-NetFirewallRule -enabled true
+# OnDomain
+Get-NetFirewallRule -name  FPS-ICMP4-ERQ-In-NoScope | Set-NetFirewallRule -enable true
+Get-NetFirewallRule -name  FPS-ICMP6-ERQ-In-NoScope | Set-NetFirewallRule -enable true
 ```
 
 ### with batch
