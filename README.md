@@ -65,6 +65,18 @@ localを経由して外部にあるtargetにremoteからアクセスさせたい
 ssh -fNT -R xxx:remote:zzz target
 ```
 
+### Dynamic portforwarding
+
+local を起点とし、remote にsshdが立っているとする。 このとき下記のように-Dオプションを指定して接続することで、local から見たlocalhost:1080がSOCKS Proxyとなる。 なお、SOCKS Proxyのポート番号はtcp/1080が標準的に用いられる [RFC 1928]。
+
+on user@local
+
+```
+ssh -D 1080 user@remote
+```
+
+ここで local のブラウザ設定からlocalhost:1080をSOCKS Proxyとして指定すると、ブラウザからのすべてのアクセスが remote を経由したアクセスとなる。
+
 ## Windows Firewall Settings
 
 https://docs.microsoft.com/en-US/troubleshoot/windows-server/networking/netsh-advfirewall-firewall-control-firewall-behavior
