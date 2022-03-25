@@ -86,7 +86,7 @@ https://docs.microsoft.com/ja-jp/windows/security/threat-protection/windows-fire
 ```pwsh
 Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 New-NetFirewallRule -Name <名前> -DisplayName <表示名> -Enabled true -Profile <有効にするプロファイル> -Action Allow -LocalAddress Any -RemoteAddress Any -Protocol TCP -LocalPort 10050 -RemotePort Any
-New-NetFirewallRule -name 'DPF' -enable true -profile any -action allow -LocalAddress Any -RemoteAddress Any -Protocol TCP -LocalPort 1080 -RemotePort Any
+New-NetFirewallRule -name 'DPF' -displayname 'DPF' -enable true -profile any -action allow -LocalAddress Any -RemoteAddress Any -Protocol TCP -LocalPort 1080 -RemotePort Any
 ```
 
 ### with batch
