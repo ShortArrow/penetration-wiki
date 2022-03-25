@@ -51,7 +51,7 @@ nc xxx.xxx.xxx.xxx 4444
 
 ### Local forward
 
-ローカルにあるツールをremoteに対して使いたい場合
+remoteを経由してローカルにあるツールをtargetに対して使いたい場合
 
 ```
 ssh -fNT -L xxx:target:zzz remote
@@ -59,7 +59,7 @@ ssh -fNT -L xxx:target:zzz remote
 
 ### Remote forward
 
-外部にあるサーバーにremoteからアクセスさせたい場合
+localを経由して外部にあるtargetにremoteからアクセスさせたい場合
 
 ```
 ssh -fNT -R xxx:remote:zzz target
