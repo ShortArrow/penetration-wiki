@@ -79,9 +79,9 @@ ssh -D 1080 user@remote
 
 ## Windows Firewall Settings
 
-https://docs.microsoft.com/en-US/troubleshoot/windows-server/networking/netsh-advfirewall-firewall-control-firewall-behavior
-
 ### with pwsh
+
+https://docs.microsoft.com/ja-jp/windows/security/threat-protection/windows-firewall/windows-firewall-with-advanced-security-administration-with-windows-powershell
 
 ```pwsh
 Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
@@ -89,6 +89,8 @@ New-NetFirewallRule -Name <名前> -DisplayName <表示名> -Enabled true -Profi
 ```
 
 ### with batch
+
+https://docs.microsoft.com/en-US/troubleshoot/windows-server/networking/netsh-advfirewall-firewall-control-firewall-behavior
 
 ```batch
 netsh advfirewall firewall add rule name="My Application" dir=in action=allow program="C:\MyApp\MyApp.exe" enable=yes
