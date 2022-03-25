@@ -64,3 +64,41 @@ localを経由して外部にあるtargetにremoteからアクセスさせたい
 ```
 ssh -fNT -R xxx:remote:zzz target
 ```
+
+## Windows Firewall Settings
+
+https://docs.microsoft.com/en-US/troubleshoot/windows-server/networking/netsh-advfirewall-firewall-control-firewall-behavior
+
+```pwsh
+Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
+New-NetFirewallRule -Name <名前> -DisplayName <表示名> -Enabled true -Profile <有効にするプロファイル> -Action Allow -LocalAddress Any -RemoteAddress Any -Protocol TCP -LocalPort 10050 -RemotePort Any
+
+netsh advfirewall firewall add rule name="My Application" dir=in action=allow program="C:\MyApp\MyApp.exe" enable=yes
+
+netsh advfirewall firewall add rule name="My Application" dir=in action=allow program= "C:\MyApp\MyApp.exe" enable=yes remoteip=157.60.0.1,172.16.0.0/16,LocalSubnet profile=domain
+
+netsh advfirewall firewall add rule name="My Application" dir=in action=allow program= "C:\MyApp\MyApp.exe" enable=yes remoteip=157.60.0.1,172.16.0.0/16,LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="My Application" dir=in action=allow program="C:\MyApp\MyApp.exe" enable=yes remoteip=157.60.0.1,172.16.0.0/16,LocalSubnet profile=private
+
+netsh advfirewall firewall add rule name= "Open Port 80" dir=in action=allow protocol=TCP localport=80
+
+netsh advfirewall firewall delete rule name= rule name program="C:\MyApp\MyApp.exe"
+
+netsh advfirewall firewall delete rule name= rule name protocol=udp localport=500
+  
+netsh advfirewall reset
+    
+netsh advfirewall firewall set rule group="File and Printer Sharing" new enable=Yes
+    
+netsh advfirewall firewall set rule group="remote desktop" new enable=Yes
+    	
+netsh advfirewall firewall set rule group="remote desktop" new enable=Yes profile=domain
+  
+netsh advfirewall firewall add rule name="ICMP Allow incoming V4 echo request" protocol=icmpv4:8,any dir=in action=allow
+  
+netsh advfirewall firewall add rule name= "All ICMP V4" protocol=icmpv4:any,any dir=in action=allow
+  
+netsh advfirewall firewall add rule name="Block Type 13 ICMP V4" protocol=icmpv4:13,any dir=in action=block
+
+netsh advfirewall firewall set rule group="remote desktop" new enable=Yes profile=private
+```
