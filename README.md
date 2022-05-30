@@ -94,7 +94,13 @@ on user@local
 ssh -D 1080 user@remote
 ```
 
-ここで local のブラウザ設定からlocalhost:1080をSOCKS Proxyとして指定すると、ブラウザからのすべてのアクセスが remote を経由したアクセスとなる。
+ここで local のブラウザ設定からlocalhost:1080をSOCKS Proxyとして指定すると、ブラウザからのすべてのアクセスが remote を経由したアクセスとなる.
+
+### SSH Compress
+
+```bash
+ssh -C --o CompressionLevel=9
+```
 
 ## Windows Firewall Settings
 
